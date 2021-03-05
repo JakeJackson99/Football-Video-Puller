@@ -8,7 +8,6 @@ Channel usernames:
 - talkSPORTmagazine
 """
 
-
 @app.route('/')
 def index():
     id = get_id('talksportmagazine')
