@@ -11,5 +11,5 @@ Channel usernames:
 @app.route('/')
 def index():
     id = get_id('talksportmagazine')
-    video_id = video_list(id, 'city')
+    video_id = video_list(id)
     return render_template('index.html', video_id=video_id)
