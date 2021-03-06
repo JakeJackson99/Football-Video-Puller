@@ -22,6 +22,20 @@ class TestApi(unittest.TestCase):
         self.assertEqual(result, None)
 
 
+    # video_list
+
+    def test_video_list_string(self):
+        id = api.get_id('talksportmagazine')
+        result = api.video_list(id)
+        self.assertEqual(result[0], '-C1as8I-qhg')
+
+    def test_video_list_string_list(self):
+        id = api.get_id('talksportmagazine', 'pewdiepie')
+        result = api.video_list(id)
+        self.assertEqual(result[0], '-C1as8I-qhg')
+        self.assertEqual(result[1], 'oLAw5EGe1zY')
+
+
 if __name__ == "__main__":
     unittest.main()
 

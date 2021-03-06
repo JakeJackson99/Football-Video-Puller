@@ -8,7 +8,7 @@ api_key = getenv('YT_API_KEY', None)
 service = build('youtube', 'v3', developerKey=api_key)
 
 
-def get_id(*username):    
+def get_id(*username):
     if username:
         id_list = list()
 
@@ -25,16 +25,22 @@ def get_id(*username):
         return None
 
 
-def video_list(id):
-    req = service.search().list(
-        part='snippet',
-        channelId=id,
-        maxResults=1,
-        publishedAfter=None,
-        q='city',
-        type='video'
-    )
+def video_list(*id_values):
+    if id_values:
+        id_list = list()
 
-    res = req.execute()
-    video_id = res.get('items')[0]['id']['videoId']
-    return video_id
+        for i in id_values:
+            req = service.search().list(
+                part='snippet',
+                channelId=i,
+                maxResults=1,
+                publishedAfter=None,
+                q='city',
+                type='video'
+            )
+            res = req.execute()
+            id_list.append(res.get('items')[0]['id']['videoId'])
+
+        return id_list
+    else:
+        return None
