@@ -26,24 +26,26 @@ def get_id(*username):
 
 
 def video_list(*id_values):
-    if all(i is not str for i in id_values):
-        return None
-    
-    if id_values:
-        id_list = list()
+    try:
+        if id_values:
+            id_list = list()
 
-        for i in id_values:
-            req = service.search().list(
-                part='snippet',
-                channelId=i,
-                maxResults=1,
-                publishedAfter=None,
-                q='city',
-                type='video'
-            )
-            res = req.execute()
-            id_list.append(res.get('items')[0]['id']['videoId'])
+            for i in id_values:
+                    req = service.search().list(
+                        part='snippet',
+                        channelId=i,
+                        maxResults=1,
+                        publishedAfter=None,
+                        q='city',
+                        type='video'
+                    )
+                    res = req.execute()
+                    id_list.append(res.get('items')[0]['id']['videoId'])
 
-        return id_list
-    else:
-        return None
+            return id_list
+        else:
+            return None
+    except TypeError as e:
+        print(e)
+    except Exception as e:
+        print(e)
