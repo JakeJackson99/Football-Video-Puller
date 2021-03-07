@@ -26,6 +26,9 @@ def get_id(*username):
 
 
 def video_list(*id_values):
+    if all(i is not str for i in id_values):
+        return None
+    
     if id_values:
         id_list = list()
 
