@@ -1,0 +1,86 @@
+Get ID
+------
+'pewdiepie':
+    {
+    "kind": "youtube#channelListResponse",
+    "etag": "8VublJcb9NsKSgqWz11zGOVuNWw",
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+        "kind": "youtube#channel",
+        "etag": "jdJBNDi9EhKx94ZE3b4lfi9lS1Y",
+        "id": "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
+        }]
+    }
+
+
+'talksportmagazine':
+    {
+    "kind": "youtube#channelListResponse",
+    "etag": "MnUQ14_dofqqpB_Wwbk9UZfOppA",
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+        "kind": "youtube#channel",
+        "etag": "COE_5PHMxVPe7_M_vESgvy5yiD0",
+        "id": "UCWw6scNyopJ0yjMu1SyOEyw"
+        }]
+    }
+
+
+
+Get Video ID
+------------
+'talksport' -> 'city':
+    {
+    "kind": "youtube#searchListResponse",
+    "etag": "57jGEsdNh-K1HiYtm7-q8csSdPE",
+    "nextPageToken": "CAEQAA",
+    "regionCode": "GB",
+    "pageInfo": {
+        "totalResults": 2873,
+        "resultsPerPage": 1
+    },
+    "items": [
+        {
+        "kind": "youtube#searchResult",
+        "etag": "jwDCclCdAcGywLqISFAArmnnHP0",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "SaPG5Z1MMyw"
+        },
+        "snippet": {
+            "publishedAt": "2019-07-29T15:07:54Z",
+            "channelId": "UCWw6scNyopJ0yjMu1SyOEyw",
+            "title": "Things you never knew about Man City | theKNOWLEDGE | talkSPORT",
+            "description": "Welcome to the first episode of theKNOWLEDGE from talkSPORT, the 
+            No1 station for the Premier League. This week we talk about the Premier League ...",
+            "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/SaPG5Z1MMyw/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/SaPG5Z1MMyw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/SaPG5Z1MMyw/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            }
+            },
+            "channelTitle": "talkSPORT",
+            "liveBroadcastContent": "none",
+            "publishTime": "2019-07-29T15:07:54Z"
+        }
+        }]
+    }
