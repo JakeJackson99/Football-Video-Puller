@@ -5,12 +5,13 @@
 <main class="mt-3">
     <div class="container">
         <div class="row justify-content-around">
-            <div class="col-6 align-self-center">
-                <iframe width="540", height="300", src="https://www.youtube.com/embed/{{video_id}}" frameborder="1"></iframe>
-            </div>
-            <div class="col-6 align-self-center">
-                <iframe width="540", height="300", src="https://www.youtube.com/embed/{{video_id}}" frameborder="1"></iframe>
-            </div>
+
+            {% for id in video_ids %}
+                <div class="col-6 align-self-center">
+                    <iframe width="540", height="300", src="https://www.youtube.com/embed/{{id}}" frameborder="1"></iframe>
+                </div>
+            {% endfor %}
+            
         </div>
     </div>
 </main>
