@@ -1,12 +1,18 @@
-from app import service
+# pylint: disable=no-member
+
+# External imports
 from datetime import datetime, timedelta
 
+# Internal imports
+from app import service
 
-def video_list(*id_values):
+
+def video_list(*id_values, keyword=None):
     """Creates a list of video IDs that based on the given channel IDs.
 
     Args:
         *id_values: The ID of a channel.
+        keyword: A word that can be used to target certain types of videos, default=None.
 
     Returns:
         A list of video IDs.
@@ -23,8 +29,8 @@ def video_list(*id_values):
                 req = service.search().list(
                     part='snippet',
                     channelId=id,
-                    publishedAfter=date,
                     q='city',
+                    publishedAfter=date,
                     type='video'
                 )
                 res = req.execute()
