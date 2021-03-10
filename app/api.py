@@ -17,14 +17,14 @@ def video_list(*id_values):
     try:
         if id_values:
             id_list = list()
+            date = published_after()
 
             for id in id_values:
                 req = service.search().list(
                     part='snippet',
                     channelId=id,
-                    maxResults=2,
-                    publishedAfter=None,
-                    q='a',
+                    publishedAfter=date,
+                    q='city',
                     type='video'
                 )
                 res = req.execute()
