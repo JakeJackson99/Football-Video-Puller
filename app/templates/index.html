@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row justify-content-around">
 
+            <!-- Loops through the given list of video IDs and creates divs accordingly -->
             {% for id in video_ids %}
                 <div class="col-6 align-self-center">
                     <iframe width="540", height="300", src="https://www.youtube.com/embed/{{id}}" frameborder="1"></iframe>
