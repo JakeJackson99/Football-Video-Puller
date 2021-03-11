@@ -1,7 +1,7 @@
 # pylint: disable=no-member
 
 # External imports
-from flask import render_template, redirect, url_for, request, session
+from flask import render_template, redirect, url_for, session
 
 # Internal imports
 from app import app, channel_ids
@@ -14,7 +14,8 @@ def index():
     """The index page.
 
     Returns:
-        The index page if no keyword has been entered, else it redirects to /videos.
+        The index page if no keyword has been entered, else it redirects to
+        /videos.
     """
     form = Keyword()
 
@@ -34,5 +35,5 @@ def videos():
         The videos page with a list of videos based on videos_ids.
     """
     keyword = session.get('keyword', None)
-    video_ids = video_list(*channel_ids, keyword)
+    video_ids = video_list(*channel_ids, keyword=keyword)
     return render_template('videos.html', video_ids=video_ids)

@@ -12,7 +12,8 @@ def video_list(*id_values, keyword=None):
 
     Args:
         *id_values: The ID of a channel.
-        keyword: A word that can be used to target certain types of videos, default=None.
+        keyword: A word that can be used to target certain types of videos,
+        default=None.
 
     Returns:
         A list of video IDs.
@@ -29,7 +30,7 @@ def video_list(*id_values, keyword=None):
                 req = service.search().list(
                     part='snippet',
                     channelId=id,
-                    q='city',
+                    q=keyword,
                     publishedAfter=date,
                     type='video'
                 )
@@ -48,7 +49,8 @@ def published_after(days=1):
     """Creates the value for 'publishedAfter' for video_list().
 
     Args:
-        days: The number of days ago the return date should be in regard to "now", default=1.
+        days: The number of days ago the return date should be in regard to
+        "now", default=1.
 
     Returns:
         The the date 24 hours ago in RFC 3339 format.
